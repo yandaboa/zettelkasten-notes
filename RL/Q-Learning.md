@@ -26,3 +26,17 @@ The algorithm for performing Q-Learning:
 	4. use the off-policy update equation to update the Q-value of the state-action pair taken (on-policy makes it SARSA, not Q-learning)
 		1. note: Q-learning often converges to optimal Q-function faster, while SARSA is more resilient in a stochastic environment
 	5. set the current state to be the new state received
+
+**Deep Q-Learning**
+
+- instead of maintaining a large Q-table, use a neural network instead to approximate Q-values
+	- better at handling large state-action spaces, as well as continuous ones/more complex scenarios
+	- the only realistic option for real-world applications/robotics, where state spaces are unconstrained
+- instead of updating values in a Q-table, rewards are used to do gradient descent on the neural network
+
+The algorithm for performing deep Q-learning:
+1. initialize the neural network with initial weights and correct input/output dimensions (input should match observation, output should match action space)
+2. initialize the environment
+3. for i in range(num_episodes):
+	1. give current state to the neural network, get an optimal action in return
+	2. 
